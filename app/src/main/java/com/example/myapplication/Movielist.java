@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +67,7 @@ public class Movielist extends AppCompatActivity {
             TextView year = (TextView) rowView.findViewById(R.id.movieYear);
             year.setText(values[position][1]);
             ImageView movieImage = (ImageView) rowView.findViewById(R.id.mov_images);
+            Log.d("MovieImage", values[position][3]);
             Picasso.get().load(values[position][3]).into(movieImage);
 
 
