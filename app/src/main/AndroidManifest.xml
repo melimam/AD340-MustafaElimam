@@ -1,25 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+xmlns:tools="http://schemas.android.com/tools"
+package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".Movielist" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    android:usesCleartextTraffic="true"
+    tools:ignore="GoogleAppIndexingWarning">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
+
+    <activity
+        android:name=".TrafficMap"
+        android:label="locations"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
+    <activity
+        android:name=".AboutActivity"
+        android:label="About"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
+    <activity
+        android:name=".East"
+        android:label="Zombie Movies"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
+    <activity
+        android:name=".detail"
+        android:label="Zombie Movie Details"
+        android:parentActivityName=".East">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".East" />
+    </activity>
+    <activity
+        android:name=".TeamActivity"
+        android:label="TeamActivity"
+        android:parentActivityName=".MainActivity" />
+    <activity
+        android:name=".TrafficCamera"
+        android:label="Traffic Map"
+        android:parentActivityName=".MainActivity" />
+    <activity
+        android:name=".traffic_camera"
+        android:label="Traffic Cameras"
+        android:parentActivityName=".MainActivity" />
+    <activity
+        android:name=".MainActivity"
+        android:label="My AD340 Project">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
 
 </manifest>
